@@ -1,14 +1,10 @@
 import { Autocomplete, TextField } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { searchSx } from '../../styles/searchStyle';
-
-interface WeaponOption {
-	id: string;
-	name: string;
-}
+import { Weapon } from '../../config/weaponType';
 
 interface SearchProps {
-	options: WeaponOption[];
+	options: Weapon[];
 	loading: boolean;
 	size?: 'small' | 'medium';
 	label?: string;
@@ -16,21 +12,17 @@ interface SearchProps {
 
 const Search = ({ options, loading, size = 'medium', label = 'Search' }: SearchProps) => {
 	const [searchTerm, setSearchTerm] = useState<string>('');
-	const [selectedWeapon, setSelectedWeapon] = useState<WeaponOption | null>(null);
-
-  useEffect(() => {
-    setSearchTerm('');
-  }, [selectedWeapon])
+	const [selectedWeapon, setSelectedWeapon] = useState<Weapon | null>(null);
 
 	const handleInputChange = (_event: React.SyntheticEvent, newInputValue: string) => {
 		setSearchTerm(newInputValue);
 		console.log('Querying database with:', newInputValue);
 	};
 
-	const handleChange = (_event: React.SyntheticEvent, newValue: WeaponOption | null) => {
-			setSearchTerm('');
-      setSelectedWeapon(null);
-			console.log('Submitting Weapon to DB:', newValue);
+	const handleChange = (_event: React.SyntheticEvent, newValue: Weapon | null) => {
+		setSearchTerm('');
+		setSelectedWeapon(newValue);
+		console.log('Submitting Weapon to DB:', newValue);
 	};
 
 	return (
@@ -41,16 +33,16 @@ const Search = ({ options, loading, size = 'medium', label = 'Search' }: SearchP
 			loading={loading}
 			options={options}
 			inputValue={searchTerm}
-			getOptionLabel={(option: WeaponOption | string) =>
+			getOptionLabel={(option: Weapon | string) =>
 				typeof option === 'string' ? option : option.name
 			}
-			isOptionEqualToValue={(option: WeaponOption, value: WeaponOption | null) =>
-				option.id === value?.id
+			isOptionEqualToValue={(option: Weapon, value: Weapon | null) =>
+				option._id === value?._id
 			}
 			onInputChange={(_event, newInputValue) => handleInputChange(_event, newInputValue)}
 			onChange={handleChange}
-      forcePopupIcon={false}
-      disableClearable
+			forcePopupIcon={false}
+			disableClearable
 			renderInput={(params) => (
 				<TextField
 					{...params}

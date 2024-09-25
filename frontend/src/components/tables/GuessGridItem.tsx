@@ -23,11 +23,11 @@ export default function GuessGridItem({ guessedItem, correctItem, columns }: Gue
 	};
 
 	return (
-		<Grid container size={12} spacing={1} sx={{ minWidth: '500px' }}>
+		<Grid container size={12} spacing={1} sx={{ minWidth: '420px', justifyContent: 'center' }}>
 			{columns.map((column) => (
 				<Grid
 					key={`${guessedItem._id}-${column}`}
-					size={2}
+					size={1.8}
 					sx={{ ...getColorSx(compared[column as keyof Weapon]), ...itemSx, ...bodySx }}
 				>
 					{compared[column as keyof Weapon] === 2 && <DownloadIcon sx={arrowSx} />}

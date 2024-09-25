@@ -10,18 +10,18 @@ export default function GuessGridHeader({ displayedColumns }: GuessGridHeaderPro
 	
 
 	return (
-		<Grid container size={12} spacing={1} sx={{ minWidth: '500px' }}>
+		<Grid container size={12} spacing={1} sx={{ minWidth: '420px', justifyContent: 'center' }}>
 			{displayedColumns.map((column) => (
 				<Grid
 					key={column}
-					size={2}
+					size={1.8}
 					sx={{
 						...itemSx,
-						minHeight: '60px',
+						minHeight: '30px',
 						borderBottom: '2px solid white',
 					}}
 				>
-					<Typography variant="h6" fontWeight="400">
+					<Typography variant="subtitle2" fontWeight="400">
 						{column.charAt(0).toUpperCase() + column.slice(1)}
 					</Typography>
 				</Grid>

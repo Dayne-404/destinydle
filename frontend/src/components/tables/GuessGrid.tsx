@@ -23,7 +23,7 @@ export default function GuessGrid({
 
 	return (
 		<Box sx={{ overflowX: 'auto', width: '100%' }}>
-			<Grid container spacing={1}>
+			<Grid container spacing={2}>
 				<GuessGridHeader displayedColumns={displayedColumns} />
 				{guessedItems.map((item) => (
 					<GuessGridItem

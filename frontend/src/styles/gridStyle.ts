@@ -5,7 +5,6 @@ export const itemSx = {
 	alignItems: 'center',
 	display: 'flex',
 	textAlign: 'center',
-	minHeight: '80px',
 };
 
 export const bodySx = {

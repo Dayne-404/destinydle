@@ -10,7 +10,7 @@ interface HeaderProps {
 const Header = ({title}: HeaderProps) => {
 	const SettingsButton = () => {
 		return (
-			<IconButton color="inherit" aria-label="settings">
+			<IconButton  sx={{color: 'text.secondary'}} aria-label="settings">
 				<SettingsIcon />
 			</IconButton>
 		);
@@ -18,7 +18,7 @@ const Header = ({title}: HeaderProps) => {
 
 	const NotificationsButton = () => {
 		return (
-			<IconButton color="inherit" aria-label="notifications">
+			<IconButton sx={{color: 'text.secondary'}} aria-label="notifications">
 				<NotificationsIcon />
 			</IconButton>
 		);
@@ -29,6 +29,7 @@ const Header = ({title}: HeaderProps) => {
 			<Typography
 				variant="h4"
 				sx={{
+					letterSpacing: '0.5rem',
 					flexGrow: 1,
 					textAlign: 'center',
 					fontWeight: 'bold',
@@ -39,6 +40,7 @@ const Header = ({title}: HeaderProps) => {
 						md: '2.5rem',
 						lg: '3rem',
 					},
+					color: 'text.secondary'
 				}}
 			>
 				{title}

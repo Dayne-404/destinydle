@@ -1,6 +1,6 @@
 export interface Weapon {
     _id: string,
-    name?: string,
+    name: string,
     imgUrl: string,
     type: string,
     ammo: string,
