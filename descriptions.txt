@@ -1,0 +1,20 @@
+Guess the exotic (classic)?
+
+0. Name
+0. Img
+1. Type
+    2. Archetype (This is always exotic on exotic weapons)
+2. Ammo: (Primary, Energy, Heavy)
+3. Element (Kinetic, Void, Arc, Solar, Statis, Strand)
+4. Released
+5. Craftable
+
+
+Hint: Source, Requires,
+
+
+Guess the exotic from perk?
+
+Silhouette?
+
+Sound?

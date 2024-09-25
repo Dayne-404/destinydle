@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Futura';
+    src: url('../fonts/Futura.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Neue';
+    src: url('../fonts/Neue.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
