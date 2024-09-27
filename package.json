@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-animated-numbers": "^0.18.0",
+    "react-awesome-animated-number": "^1.0.13"
+  }
+}

@@ -14,7 +14,7 @@ export default function GuessGridHeader({ displayedColumns }: GuessGridHeaderPro
 			{displayedColumns.map((column) => (
 				<Grid
 					key={column}
-					size={1.8}
+					size={1.6}
 					sx={{
 						...itemSx,
 						minHeight: '30px',

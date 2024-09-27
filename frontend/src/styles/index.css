@@ -5,4 +5,5 @@ body, html {
     background-size: cover;
     background-color: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
