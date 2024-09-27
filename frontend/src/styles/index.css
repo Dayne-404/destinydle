@@ -1,6 +1,6 @@
 body, html {
     height: 100%;
-    margin: 0;
+    margin-top: 0.5rem;
     background-image: url('../public/background2.jpg');
     background-size: cover;
     background-color: center;

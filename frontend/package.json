@@ -15,9 +15,8 @@
     "@mui/icons-material": "^6.1.1",
     "@mui/material": "^6.1.1",
     "react": "^18.3.1",
-    "react-animated-numbers": "0.1.0",
     "react-dom": "^18.3.1",
-    "react-spring": "^9.7.4"
+    "react-animated-numbers": "git+https://github.com/Dayne-404/react-animated-numbers.git"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

@@ -6,5 +6,4 @@ export const paperSx = {
     backdropFilter: 'blur(10px)',
     minHeight: `calc(100vh - ${5 * 8}px)`,
     boxSizing: 'border-box',
-    my: 2
 }
