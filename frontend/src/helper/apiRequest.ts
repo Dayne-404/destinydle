@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:3000/api';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 interface ApiRequestProps {
 	endpoint: string;
@@ -14,7 +14,7 @@ export const apiRequest = async ({
 	params,
 	body,
 }: ApiRequestProps) => {
-	let uri = `${API_BASE_URL}${endpoint}`;
+	let uri = `${apiUrl}${endpoint}`;
 
 	if (params) uri += `?${params.toString()}`;
 
