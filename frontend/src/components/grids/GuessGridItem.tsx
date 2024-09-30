@@ -7,11 +7,12 @@ import { compareWeapon } from '../../helper/compareWeapon';
 import PublishIcon from '@mui/icons-material/Publish';
 import DownloadIcon from '@mui/icons-material/Download';
 import { useEffect, useState } from 'react';
+import { SEASONS } from '../../config/seasonType';
 
 interface GuessGridItemProps {
 	order: (keyof Weapon)[];
 	compareFields?: (keyof Weapon)[];
-	guessedItem?: Weapon; 
+	guessedItem?: Weapon;
 	correctItem?: Weapon;
 }
 
@@ -29,7 +30,7 @@ export default function GuessGridItem({
 	}
 
 	const getColorSx = (num: number): { color: string; backgroundColor: string } => {
-		if (num === 1 || !num) return { color: 'success.contrastText', backgroundColor: 'success.main' };
+		if (num === 1) return { color: 'success.contrastText', backgroundColor: 'success.main' };
 		return { color: 'error.contrastText', backgroundColor: 'error.main' };
 	};
 
@@ -39,7 +40,6 @@ export default function GuessGridItem({
 		}, 100);
 	}, []);
 
-	
 	const displayedItem = guessedItem || correctItem;
 	if (!displayedItem) {
 		return <></>;
@@ -73,7 +73,9 @@ export default function GuessGridItem({
 						/>
 					) : (
 						<Typography variant="body2" sx={textSx}>
-							{displayedItem[key]}
+							{key === 'released'
+								? `${SEASONS[displayedItem.released as keyof typeof SEASONS]} S(${displayedItem[key]})`
+								: displayedItem[key]}
 						</Typography>
 					)}
 				</Grid>

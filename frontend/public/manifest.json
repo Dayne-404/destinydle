@@ -1,0 +1,16 @@
+{
+    "name": "Destinydle",
+    "short_name": "Destinydle",
+    "description": "A daily guessing game based off of destiny 2 and its exotic weapons",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "icons": [
+      {
+        "src": "./icon.svg",
+        "sizes": "any",
+        "type": "image/svg+xml"
+      }
+    ]
+  }

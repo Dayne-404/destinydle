@@ -4,6 +4,7 @@ import { Weapon } from '../../config/weaponType';
 
 interface SearchBarProps {
 	searchOptions: Weapon[];
+	selectedOptions: Weapon[];
 	guessedItem: Weapon | null;
 	setGuessedItem: React.Dispatch<React.SetStateAction<Weapon | null>>;
 	searchTerm: string;
@@ -13,17 +14,23 @@ interface SearchBarProps {
 
 const SearchBar = ({
 	searchOptions,
+	selectedOptions,
 	guessedItem,
 	setGuessedItem,
 	searchTerm,
 	setSearchTerm,
 	onClick,
 }: SearchBarProps) => {
+	const filteredSearchOptions = searchOptions.filter(option => 
+		!selectedOptions.some(selected => selected._id === option._id)
+	);
+
 	return (
-		<Stack direction="row" width="100%" justifyContent="center" spacing={1} pt={3} pb={1}>
-			<Box width="50%">
+		<Stack direction="row" width="100%" justifyContent="center" spacing={0.5} pt={3} pb={1}>
+			<Box width="40%">
 				<Search
-					options={searchOptions}
+					label='Type a weapon to get started'
+					options={filteredSearchOptions}
 					size="small"
 					loading={false}
 					selectedWeapon={guessedItem}
@@ -32,7 +39,7 @@ const SearchBar = ({
 					setSearchTerm={setSearchTerm}
 				/>
 			</Box>
-			<Button variant="contained" onClick={() => onClick()}>
+			<Button variant="contained" size='small' onClick={() => onClick()}>
 				Search
 			</Button>
 		</Stack>

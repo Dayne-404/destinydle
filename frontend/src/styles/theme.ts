@@ -7,6 +7,12 @@ const theme = createTheme({
 		h4: {
 			fontFamily: 'Futura, Arial, sans-serif',
 		},
+		subtitle1: {
+			fontFamily: 'Futura, Arial, sans-serif',
+		},
+		h5: {
+			fontFamily: 'Futura, Arial, sans-serif',
+		},
 	},
 
 	palette: {

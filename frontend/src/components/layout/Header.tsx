@@ -1,6 +1,4 @@
-import { Stack, IconButton, Typography } from '@mui/material';
-import SettingsIcon from '@mui/icons-material/Settings';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import { Stack, Typography } from '@mui/material';
 
 interface HeaderProps {
   title: string;
@@ -8,22 +6,6 @@ interface HeaderProps {
 }
 
 const Header = ({title}: HeaderProps) => {
-	const SettingsButton = () => {
-		return (
-			<IconButton  sx={{color: 'text.secondary'}} aria-label="settings">
-				<SettingsIcon />
-			</IconButton>
-		);
-	};
-
-	const NotificationsButton = () => {
-		return (
-			<IconButton sx={{color: 'text.secondary'}} aria-label="notifications">
-				<NotificationsIcon />
-			</IconButton>
-		);
-	};
-
 	const Title = () => {
 		return (
 			<Typography
@@ -55,9 +37,7 @@ const Header = ({title}: HeaderProps) => {
 			justifyContent="center"
 			py={3}
 		>
-			<SettingsButton />
 			<Title />
-			<NotificationsButton />
 		</Stack>
 	);
 };

@@ -1,4 +1,4 @@
-export const Seasons = {
+export const SEASONS = {
     1: 'Red War',
     2: 'Curse of Osiris',
     3: 'Warmind',

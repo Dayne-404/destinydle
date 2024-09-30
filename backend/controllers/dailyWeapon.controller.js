@@ -39,6 +39,26 @@ const selectNewDailyWeapon = async (req, res) => {
 	}
 };
 
+const updateDailyWeapon = async () => {
+	const currentDaily = await DailyWeapon.findOne().sort({ updatedAt: -1 })
+	
+	if(currentDaily) {
+		const currentDate = new Date();
+		const createdDate = new Date(currentDaily.updatedAt);
+
+		currentDate.setHours(0, 0, 0, 0);
+		createdDate.setHours(0, 0, 0, 0);
+
+		if(currentDate > createdDate) {
+			console.log('Daily weapon is outdated selecting new');
+			await selectNewDailyWeapon();
+		}
+	} else {
+		console.log('No daily weapon found selecting new')
+		await selectNewDailyWeapon();
+	}
+};
+
 const getDailyWeapon = async (req, res) => {
 	try {
 		const currentDaily = await DailyWeapon.findOne()
@@ -54,4 +74,5 @@ const getDailyWeapon = async (req, res) => {
 module.exports = {
 	selectNewDailyWeapon,
 	getDailyWeapon,
+	updateDailyWeapon,
 };
