@@ -21,3 +21,9 @@ Destinydle challenges players to guess a random Destiny 2 exotic weapon each day
 - Clean, responsive interface
 - Backend API to fetch and validate guesses
 - MongoDB stores weapon data and user history
+
+## Notes
+
+- I pulled from the destiny2 api to populate the db in the future would be better to use the api directly
+- No stats or anything **Yet**
+- More features coming soon!
