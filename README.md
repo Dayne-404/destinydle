@@ -1,5 +1,7 @@
 # Destinydle
 
+![Gif of gameplay](./preview.gif)
+
 **A daily exotic weapon guessing game for Destiny 2 fans. Inspired by Wordle, built with React, Node.js, and MongoDB.**
 
 ## 🌟 Overview
