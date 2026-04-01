@@ -2,10 +2,13 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "backend restful API for a gamedle clone",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build:seasons": "node ./scripts/generateSeasonMap.js",
+    "build:seasonsWeapons": "node ./scripts/sortWeaponsToSeasons.js"
   },
   "author": "",
   "license": "ISC",

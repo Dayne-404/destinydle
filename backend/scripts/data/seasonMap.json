@@ -1,0 +1,283 @@
+{
+  "1": {
+    "name": "The Red War",
+    "weapons": [
+      "MIDA Multi-Tool",
+      "Sweet Business",
+      "Coldheart",
+      "The Wardcliff Coil",
+      "Legend of Acrius",
+      "Rat King",
+      "Sturm",
+      "Sunshot",
+      "Riskrunner",
+      "D.A.R.C.I.",
+      "Borealis",
+      "Fighting Lion",
+      "The Prospector",
+      "Tractor Cannon",
+      "Graviton Lance",
+      "Vigilance Wing",
+      "Hard Light",
+      "Merciless",
+      "Skyburner's Oath"
+    ]
+  },
+  "2": {
+    "name": "Curse of Osiris",
+    "weapons": [
+      "Prometheus Lens",
+      "The Jade Rabbit",
+      "Telesto",
+      "Crimson",
+      "The Colony"
+    ]
+  },
+  "3": {
+    "name": "Resurgence",
+    "weapons": [
+      "Worldline Zero",
+      "Whisper of the Worm",
+      "The Huckleberry",
+      "SUROS Regime",
+      "Polaris Lance",
+      "Sleeper Simulant"
+    ]
+  },
+  "4": {
+    "name": "Season of the Outlaw",
+    "weapons": [
+      "Malfeasance",
+      "Ace of Spades",
+      "Wish-Ender",
+      "Trinity Ghoul",
+      "Cerberus+1",
+      "Wavesplitter",
+      "The Queenbreaker",
+      "One Thousand Voices",
+      "Two-Tailed Fox",
+      "Thunderlord",
+      "The Chaperone",
+      "Lord of Wolves",
+      "Black Talon"
+    ]
+  },
+  "5": {
+    "name": "Season of the Forge",
+    "weapons": [
+      "Jötunn",
+      "The Last Word",
+      "Anarchy",
+      "Izanagi's Burden",
+      "Le Monarque"
+    ]
+  },
+  "6": {
+    "name": "Season of the Drifter",
+    "weapons": [
+      "Outbreak Perfected",
+      "Arbalest",
+      "Thorn"
+    ]
+  },
+  "7": {
+    "name": "Season of Opulence",
+    "weapons": [
+      "Truth",
+      "Bad Juju",
+      "Tarrabah",
+      "Lumina"
+    ]
+  },
+  "8": {
+    "name": "Season of the Undying",
+    "weapons": [
+      "Xenophage",
+      "Deathbringer",
+      "Eriana's Vow",
+      "Leviathan's Breath",
+      "Monte Carlo",
+      "Divinity"
+    ]
+  },
+  "9": {
+    "name": "Season of Dawn",
+    "weapons": [
+      "Bastion",
+      "Symmetry",
+      "Devil's Ruin"
+    ]
+  },
+  "10": {
+    "name": "Season of the Worthy",
+    "weapons": [
+      "Tommy's Matchbook",
+      "The Fourth Horseman",
+      "Heir Apparent"
+    ]
+  },
+  "11": {
+    "name": "Season of Arrivals",
+    "weapons": [
+      "Ruinous Effigy",
+      "Traveler's Chosen",
+      "Witherhoard"
+    ]
+  },
+  "12": {
+    "name": "Season of the Hunt",
+    "weapons": [
+      "Salvation's Grip",
+      "No Time to Explain",
+      "Eyes of Tomorrow",
+      "Cloudstrike",
+      "Duality",
+      "The Lament",
+      "Hawkmoon"
+    ]
+  },
+  "13": {
+    "name": "Season of the Chosen",
+    "weapons": [
+      "Ticuu's Divination"
+    ]
+  },
+  "14": {
+    "name": "Season of the Splicer",
+    "weapons": [
+      "Cryosthesia 77K",
+      "Vex Mythoclast"
+    ]
+  },
+  "15": {
+    "name": "Season of the Lost",
+    "weapons": [
+      "Gjallarhorn",
+      "Ager's Scepter",
+      "Forerunner",
+      "Lorentz Driver"
+    ]
+  },
+  "16": {
+    "name": "Season of the Risen",
+    "weapons": [
+      "Edge of Intent",
+      "Osteo Striga",
+      "Edge of Concurrence",
+      "Grand Overture",
+      "Edge of Action",
+      "Parasite",
+      "Collective Obligation"
+    ]
+  },
+  "17": {
+    "name": "Season of the Haunted",
+    "weapons": [
+      "Trespasser",
+      "Heartshadow"
+    ]
+  },
+  "18": {
+    "name": "Season of Plunder",
+    "weapons": [
+      "Delicate Tomb",
+      "Touch of Malice",
+      "Quicksilver Storm"
+    ]
+  },
+  "19": {
+    "name": "Season of the Seraph",
+    "weapons": [
+      "The Manticore",
+      "Revision Zero",
+      "Hierarchy of Needs"
+    ]
+  },
+  "20": {
+    "name": "Season of Defiance",
+    "weapons": [
+      "Deterministic Chaos",
+      "Winterbite",
+      "Vexcalibur",
+      "Final Warning",
+      "Conditional Finality",
+      "Verglas Curve"
+    ]
+  },
+  "21": {
+    "name": "Season of the Deep",
+    "weapons": [
+      "Wicked Implement",
+      "The Navigator",
+      "Centrifuse"
+    ]
+  },
+  "22": {
+    "name": "Season of the Witch",
+    "weapons": [
+      "Dead Messenger",
+      "Necrochasm",
+      "Dead Man's Tale",
+      "Tessellation",
+      "Ex Diris"
+    ]
+  },
+  "23": {
+    "name": "Season of the Wish",
+    "weapons": [
+      "Dragon's Breath",
+      "Buried Bloodline"
+    ]
+  },
+  "24": {
+    "name": "Episode: Echoes",
+    "weapons": [
+      "Red Death Reformed",
+      "Ergo Sum",
+      "Still Hunt",
+      "Euphony",
+      "Choir of One",
+      "Khvostov 7G-0X",
+      "Microcosm"
+    ]
+  },
+  "25": {
+    "name": "Episode: Revenant",
+    "weapons": [
+      "Slayer's Fang",
+      "Ice Breaker",
+      "Alethonym"
+    ]
+  },
+  "26": {
+    "name": "Episode: Heresy",
+    "weapons": [
+      "Finality's Auger",
+      "Barrow-Dyad",
+      "New Land Beyond",
+      "Lodestar"
+    ]
+  },
+  "27": {
+    "name": "Season: Reclamation",
+    "weapons": [
+      "Graviton Spike",
+      "Whirling Ovation",
+      "New Malpais",
+      "Wolfsbane",
+      "Third Iteration"
+    ]
+  },
+  "28": {
+    "name": "Season 28: Lawless",
+    "weapons": [
+      "Heirloom",
+      "Praxic Blade",
+      "Service of Luzaku"
+    ]
+  },
+  "29": {
+    "name": "Season 28: Lawless",
+    "weapons": []
+  }
+}
