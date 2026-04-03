@@ -1,29 +1,28 @@
 export interface Weapon {
-	_id: string;
 	name: string;
-	imgUrl: string;
 	type: string;
+	archetype: string;
 	ammo: string;
 	element: string;
 	rpm: number;
 	magazine: number;
-	released: number;
+	season: [number, string];
+	icon: string;
 }
 
 export const WEAPON_ORDER: (keyof Weapon)[] = [
-	'_id',
+	'icon',
 	'name',
-	'imgUrl',
 	'type',
+	'archetype',
 	'ammo',
 	'element',
 	'rpm',
 	'magazine',
-	'released',
+	'season',
 ];
 
 export const WEAPON_COMPARE_FIELDS: (keyof Weapon)[] = [
 	'rpm',
 	'magazine',
-	'released',
 ]

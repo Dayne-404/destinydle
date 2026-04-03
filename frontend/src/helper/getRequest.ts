@@ -1,13 +1,8 @@
 import { apiRequest } from './apiRequest';
 
-export const getWeapons = async (limit?: number, skip?: number) => {
-	const params = new URLSearchParams();
-	if (limit) params.append('limit', String(limit));
-	if (skip) params.append('skip', String(skip));
-
+export const getWeapons = async () => {
 	return apiRequest({
-		endpoint: '/destiny',
-		params: params,
+		endpoint: '/daily/all',
 	});
 };
 

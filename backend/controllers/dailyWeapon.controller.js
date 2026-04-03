@@ -26,4 +26,13 @@ const getDailyWeapon = (req, res) => {
   }
 };
 
-export { getDailyWeapon };
+const getAllWeapons = (req, res) => {
+  try {
+    res.status(200).json({weapons: weapons, count: weapons.length });
+  } catch (err) {
+    console.error("Error fetching all weapons:", err);
+    res.status(500).json({ error: "Failed to fetch all weapons" });
+  }
+};
+
+export { getDailyWeapon, getAllWeapons };

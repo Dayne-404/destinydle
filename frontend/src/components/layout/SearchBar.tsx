@@ -22,7 +22,7 @@ const SearchBar = ({
 	onClick,
 }: SearchBarProps) => {
 	const filteredSearchOptions = searchOptions.filter(option => 
-		!selectedOptions.some(selected => selected._id === option._id)
+		!selectedOptions.some(selected => selected.name === option.name)
 	);
 
 	return (

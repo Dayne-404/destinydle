@@ -1,29 +1,25 @@
 const apiUrl = import.meta.env.VITE_API_URL;
+const backendSecretKey = import.meta.env.VITE_BACKEND_SECRET_KEY;
 
 interface ApiRequestProps {
 	endpoint: string;
 	method?: string;
-	params?: URLSearchParams;
-	body?: string;
-	tokenRequired?: boolean;
 }
 
 export const apiRequest = async ({
 	endpoint,
 	method = 'GET',
-	params,
-	body,
 }: ApiRequestProps) => {
-	let uri = `${apiUrl}${endpoint}`;
+	const uri = `${apiUrl}${endpoint}`;
 
-	if (params) uri += `?${params.toString()}`;
+	console.log(apiUrl);
 
 	const options: RequestInit = {
 		method,
 		headers: {
+			'key': backendSecretKey,
 			'Content-Type': 'application/json',
 		},
-		...(body && { body: body }),
 	};
 
 	const res = await fetch(uri, options);

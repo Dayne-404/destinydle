@@ -15,9 +15,11 @@ export default function GuessGrid({
 	correctItem: Weapon | undefined;
 	compareFields: (keyof Weapon)[];
 }) {
-	const formattedOrder = order.slice(2);
-	const displayedColumns: string[] = order.slice(2);
-	displayedColumns[0] = 'Name';
+	const keysToRemove = ['rpm', 'magazine',]
+	const formattedOrder = order.filter(key => !keysToRemove.includes(key));
+	
+	const displayedColumns: string[] = order.filter(key => !keysToRemove.includes(key));
+	displayedColumns[0] = 'Icon';
 
 	return (
 		<Box sx={{ overflowX: 'auto', width: '100%' }}>
@@ -26,7 +28,7 @@ export default function GuessGrid({
 				{guessedItems.map((item) => (
 					<GuessGridItem
 						order={formattedOrder}
-						key={item._id}
+						key={item.name}
 						guessedItem={item}
 						correctItem={correctItem}
 						compareFields={compareFields}

@@ -22,5 +22,6 @@ export const compareWeapon = (
 		}
 	});
 
+	console.log('Compared Values:', comparedValues);
 	return comparedValues;
 };

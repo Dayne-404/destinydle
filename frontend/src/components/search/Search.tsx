@@ -56,7 +56,7 @@ const Search = ({
 				typeof option === 'string' ? option : option.name
 			}
 			isOptionEqualToValue={(option: Weapon, value: Weapon | null) =>
-				option._id === value?._id
+				option.name === value?.name
 			}
 			onInputChange={handleInputChange}
 			onChange={handleChange}

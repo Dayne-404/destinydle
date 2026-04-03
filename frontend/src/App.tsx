@@ -72,7 +72,8 @@ function App() {
 		const fillGuessGrid = async () => {
 			try {
 				const result = await getDailyWeapon();
-				setDailyItem(result.current);
+				console.log('Fetched daily weapon:', result.today);
+				setDailyItem(result.today);
 				if (result.previous) setPreviousItem(result.previous.name);
 			} catch (error) {
 				console.error(error);
@@ -86,6 +87,7 @@ function App() {
 		const getWeaponItems = async () => {
 			try {
 				const result: { weapons: Weapon[]; totalCount: number } = await getWeapons();
+				console.log('Fetched Weapons:', result.weapons.length);
 				setItems(result.weapons);
 			} catch (error) {
 				console.error(error);
@@ -130,7 +132,7 @@ function App() {
 		setGuessedItem(null);
 		setSearchTerm('');
 
-		if (guessedItemState?._id === dailyItem?._id) {
+		if (guessedItemState?.name === dailyItem?.name) {
 			setGameState(2);
 		} else if (numGuesses) {
 			if (numGuesses - 1 <= 0) setGameState(1);

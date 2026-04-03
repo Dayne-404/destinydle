@@ -50,7 +50,7 @@ const GameWon = ({ dailyItem, numTries }: { dailyItem?: Weapon; numTries: number
 			>
 				<Box sx={{ ...itemSx, ...bodySx }}>
 					<img
-						src={dailyItem?.imgUrl}
+						src={dailyItem?.icon}
 						alt={dailyItem?.name}
 						style={{ width: '60px', height: 'auto', objectFit: 'cover' }}
 					/>

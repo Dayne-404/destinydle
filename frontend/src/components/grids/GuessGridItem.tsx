@@ -7,7 +7,6 @@ import { compareWeapon } from '../../helper/compareWeapon';
 import PublishIcon from '@mui/icons-material/Publish';
 import DownloadIcon from '@mui/icons-material/Download';
 import { useEffect, useState } from 'react';
-import { SEASONS } from '../../config/seasonType';
 
 interface GuessGridItemProps {
 	order: (keyof Weapon)[];
@@ -49,14 +48,14 @@ export default function GuessGridItem({
 		<Grid container size={12} spacing={1} sx={{ minWidth: '420px', justifyContent: 'center' }}>
 			{order.map((key, index) => (
 				<Grid
-					key={`${displayedItem._id}-${key}`}
+					key={`${displayedItem.name}-${key}`}
 					size={1.6}
 					sx={{
 						opacity: fadeIn ? 1 : 0,
 						transition: 'opacity 0.5s ease-in-out',
 						transitionDelay: `${index * 0.3}s`,
 						animation: 'fadeIn 0.5s forwards',
-						p: key === 'imgUrl' ? 0 : 0.2,
+						p: key === 'icon' ? 0 : 0.2,
 						...getColorSx(compared[key]),
 						...itemSx,
 						...bodySx,
@@ -65,7 +64,7 @@ export default function GuessGridItem({
 					{compared[key] === 2 && <DownloadIcon sx={arrowSx} />}
 					{compared[key] === 3 && <PublishIcon sx={arrowSx} />}
 
-					{key === 'imgUrl' ? (
+					{key === 'icon' ? (
 						<img
 							src={displayedItem[key]}
 							alt={displayedItem.name}
@@ -73,8 +72,8 @@ export default function GuessGridItem({
 						/>
 					) : (
 						<Typography variant="body2" sx={textSx}>
-							{key === 'released'
-								? `${SEASONS[displayedItem.released as keyof typeof SEASONS]} S(${displayedItem[key]})`
+							{key === 'season'
+								? `${displayedItem[key][1]} S(${displayedItem[key][0]})`
 								: displayedItem[key]}
 						</Typography>
 					)}
