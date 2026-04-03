@@ -1,9 +1,9 @@
 import express from 'express';
 import { getDailyWeapon } from '../controllers/dailyWeapon.controller.js';
-
+import authorize from '../middleware.js';
 
 const router = express.Router();
 
-router.get('/', getDailyWeapon );
+router.get('/', authorize, getDailyWeapon );
 
 export default router;
