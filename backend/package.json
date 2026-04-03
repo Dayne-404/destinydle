@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "build:manifest": "node ./scripts/fetchManifest.js",
     "build:seasons": "node ./scripts/generateSeasonMap.js",
     "build:seasonsWeapons": "node ./scripts/sortWeaponsToSeasons.js"
   },

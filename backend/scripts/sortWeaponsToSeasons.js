@@ -68,7 +68,8 @@ const main = async () => {
     (item) =>
       item.inventory?.tierTypeHash === EXOTIC_HASH &&
       item.itemCategoryHashes?.includes(WEAPON_CATEGORY_HASH) &&
-      item.displayProperties?.name,
+      item.displayProperties?.name &&
+      item.itemTypeDisplayName !== 'Weapon Ornament',
   );
 
   console.log(`Found ${exotics.length} exotic weapons.`);
