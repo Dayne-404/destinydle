@@ -2,8 +2,8 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "backend restful API for a gamedle clone",
-  "type": "module",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",

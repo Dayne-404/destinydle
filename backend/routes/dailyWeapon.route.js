@@ -1,10 +1,9 @@
-const express = require('express');
-const { selectNewDailyWeapon, getDailyWeapon } = require('../controllers/dailyWeapon.controller');
-const authorize = require('../middleWare');
+import express from 'express';
+import { getDailyWeapon } from '../controllers/dailyWeapon.controller.js';
+import authorize from '../middleware.js';
 
 const router = express.Router();
 
-router.get('/', getDailyWeapon)
-router.post('/', authorize, selectNewDailyWeapon);
+router.get('/', authorize, getDailyWeapon );
 
-module.exports = router
+export default router;

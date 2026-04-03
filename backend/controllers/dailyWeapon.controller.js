@@ -1,78 +1,29 @@
-const DailyWeapon = require('../models/DailyWeapon.model');
-const Weapon = require('../models/Weapon.model');
-
-const selectNewDailyWeapon = async (req, res) => {
-	try {
-		const currentDaily = await DailyWeapon.findOne().sort({ updatedAt: -1 });
-
-		const weaponCount = await Weapon.countDocuments();
-		const randomIndex = Math.floor(Math.random() * weaponCount);
-		const randomWeapon = await Weapon.findOne().skip(randomIndex);
-
-		const newDailyWeapon = await DailyWeapon.create({
-			current: randomWeapon._id,
-			previous: currentDaily ? currentDaily.current : null,
-		});
-
-		const dailyWeaponsCount = await DailyWeapon.countDocuments();
-
-		if (dailyWeaponsCount > 7) {
-			const oldestDocument = await DailyWeapon.findOne().sort({ updatedAt: 1 });
-			if (oldestDocument) {
-				await DailyWeapon.deleteOne({ _id: oldestDocument._id });
-				console.log('Oldest daily weapon deleted ');
-			}
-		}
-
-		console.log('New daily weapon selected: ', randomWeapon.name);
-
-		if (res)
-			res.status(200).json({
-				message: 'Daily Weapon Selected Sucessfully',
-				weapon: randomWeapon.name,
-				daily: newDailyWeapon,
-			});
-	} catch (error) {
-		console.error('Error updating daily weapon: ', error);
-
-		if (res) res.status(500).json({ message: error.message });
-	}
+import weapons from "../scripts/data/weaponExotics.json" with { type: "json" };
+const getDailyIndex = (date = new Date()) => {
+  const start = new Date(2026, 0, 1);
+  const diffTime = date - start;
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  const index = diffDays % weapons.length;
+  return index;
 };
 
-const updateDailyWeapon = async () => {
-	const currentDaily = await DailyWeapon.findOne().sort({ updatedAt: -1 })
-	
-	if(currentDaily) {
-		const currentDate = new Date();
-		const createdDate = new Date(currentDaily.updatedAt);
+const getDailyWeapon = (req, res) => {
+  try {
+    const todayIndex = getDailyIndex();
+    const todayWeapon = weapons[todayIndex];
 
-		currentDate.setHours(0, 0, 0, 0);
-		createdDate.setHours(0, 0, 0, 0);
+    const yesterdayIndex = (todayIndex - 1 + weapons.length) % weapons.length;
+    const yesterdayWeapon = weapons[yesterdayIndex];
 
-		if(currentDate > createdDate) {
-			console.log('Daily weapon is outdated selecting new');
-			await selectNewDailyWeapon();
-		}
-	} else {
-		console.log('No daily weapon found selecting new')
-		await selectNewDailyWeapon();
-	}
+    res.status(200).json({
+      today: todayWeapon,
+      previous: yesterdayWeapon,
+      index: todayIndex,
+    });
+  } catch (err) {
+    console.error("Error fetching daily weapon:", err);
+    res.status(500).json({ error: "Failed to fetch daily weapon" });
+  }
 };
 
-const getDailyWeapon = async (req, res) => {
-	try {
-		const currentDaily = await DailyWeapon.findOne()
-			.sort({ updatedAt: -1 })
-			.populate('current previous');
-		res.status(200).json(currentDaily);
-	} catch (error) {
-		console.error('Error getting daily weapon');
-		res.status(500).json({ message: error.message });
-	}
-};
-
-module.exports = {
-	selectNewDailyWeapon,
-	getDailyWeapon,
-	updateDailyWeapon,
-};
+export { getDailyWeapon };
