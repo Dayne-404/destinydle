@@ -12,8 +12,6 @@ export const apiRequest = async ({
 }: ApiRequestProps) => {
 	const uri = `${apiUrl}${endpoint}`;
 
-	console.log(apiUrl);
-
 	const options: RequestInit = {
 		method,
 		headers: {

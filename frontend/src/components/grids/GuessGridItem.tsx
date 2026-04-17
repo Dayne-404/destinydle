@@ -29,7 +29,7 @@ export default function GuessGridItem({
 	}
 
 	const getColorSx = (num: number): { color: string; backgroundColor: string } => {
-		if (num === 1) return { color: 'success.contrastText', backgroundColor: 'success.main' };
+		if (num === 1 || !guessedItem) return { color: 'success.contrastText', backgroundColor: 'success.main' };
 		return { color: 'error.contrastText', backgroundColor: 'error.main' };
 	};
 

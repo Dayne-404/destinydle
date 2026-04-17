@@ -10,6 +10,7 @@ export interface Weapon {
 	icon: string;
 }
 
+//TODO: Find a way to reimplement RPM and magazine
 export const WEAPON_ORDER: (keyof Weapon)[] = [
 	'icon',
 	'name',
@@ -17,12 +18,11 @@ export const WEAPON_ORDER: (keyof Weapon)[] = [
 	'archetype',
 	'ammo',
 	'element',
-	'rpm',
-	'magazine',
 	'season',
 ];
 
 export const WEAPON_COMPARE_FIELDS: (keyof Weapon)[] = [
 	'rpm',
 	'magazine',
+	'season',
 ]
